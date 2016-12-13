@@ -27,11 +27,14 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "leaflet": "^1.0.2",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-leaflet": "^1.0.1",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "redux-form": "^6.2.0"
   }
 }
