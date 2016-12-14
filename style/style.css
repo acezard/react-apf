@@ -1,0 +1,22 @@
+.map {
+  margin-top: 30px;
+}
+
+[type="submit"] {
+  margin-right: 15px;
+}
+
+.container .userloc {
+  width: 80%;
+  float: left;
+}
+
+.container label {
+  display: block;
+}
+
+.userloc + button {
+  width: 20%;
+  float: left;
+  margin-bottom: 15px;
+}

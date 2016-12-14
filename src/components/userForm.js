@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchLocation } from '../actions/index'
+import { fetchLocation, submitForm } from '../actions/index'
 import { bindActionCreators } from 'redux'
 
 class userForm extends Component {
@@ -22,6 +22,7 @@ class userForm extends Component {
     e.preventDefault()
 
     this.props.fetchLocation(this.state.location)
+    this.props.submitForm(true)
   }
 
   handleChange(e) {
@@ -32,7 +33,6 @@ class userForm extends Component {
     e.preventDefault()
 
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
       this.setState({location: [position.coords.latitude, position.coords.longitude]})
     })
   }
@@ -49,7 +49,7 @@ class userForm extends Component {
       <form onSubmit={this.handleSubmit} className="inline">
       <div className="form-group">
         <label htmlFor="firstName">Votre localisation</label>
-        <input name="userLoc" onChange={this.handleChange} value={this.state.location} type="text" className="form-control"/>
+        <input name="userLoc" onChange={this.handleChange} value={this.state.location} type="text" className="form-control userloc"/>
         <button className="btn btn-primary" onClick={this.getLoc}>Localisation</button>
       </div>
       <div>
@@ -62,7 +62,7 @@ class userForm extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchLocation }, dispatch)
+  return bindActionCreators({ fetchLocation, submitForm }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(userForm)
