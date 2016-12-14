@@ -1,8 +1,8 @@
-import { FETCH_LOCATION } from '../actions/index'
+import { MAP_CENTER } from '../actions/index'
 
 export default function (state = null, action) {
   switch (action.type) {
-    case FETCH_LOCATION:
+    case MAP_CENTER:
       return action.payload
   }
   return state

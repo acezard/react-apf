@@ -19,7 +19,7 @@ const list = [
       "field_address:latitude": 48.77961,
       "field_address:longitude": 2.313411,
       "field_address:name": [
-        "APF - SERVICE SP\u00c9CIALIS\u00c9 POUR UNE VIE AUTONOME \u00c0 DOMICILE"
+        "APF - Service spécialisé pour une autonomie à domicile"
       ],
       "field_address:postal_code": [
         "94210"
@@ -39,7 +39,7 @@ const list = [
       "search_api_url": "http:\/\/localhost:8000\/content\/apf-service-sp%C3%A9cialis%C3%A9-pour-une-vie-autonome-%C3%A0-domicile",
       "status": 1,
       "title": [
-        "APF - SERVICE SP\u00c9CIALIS\u00c9 POUR UNE VIE AUTONOME \u00c0 DOMICILE"
+        "APF - Service spécialisé pour une autonomie à domicile"
       ],
       "type": "structure",
       "url": "http:\/\/localhost:8000\/content\/apf-service-sp%C3%A9cialis%C3%A9-pour-une-vie-autonome-%C3%A0-domicile"
@@ -135,7 +135,99 @@ const list = [
       ],
       "type": "structure",
       "url": "http:\/\/localhost:8000\/content\/ecedi-grenoble"
-    }
+    },
+  },
+  {
+    "id": "352",
+    "score": 1,
+    "fields": {
+      "search_api_id": "351",
+      "search_api_relevance": 1,
+      "changed": 1478690407,
+      "created": 1478687029,
+      "field_address:city": [
+        "Paris"
+      ],
+      "field_address:country": [
+        "fr"
+      ],
+      "field_address:country_name": [
+        "France"
+      ],
+      "field_address:latitude": 48.8718,
+      "field_address:longitude": 2.3422,
+      "field_address:name": [
+        "Musée Grévin"
+      ],
+      "field_address:postal_code": [
+        "75009"
+      ],
+      "field_address:street": [
+        "10, boulevard Montmartre"
+      ],
+      "field_structure_category:field_code": [
+        "EMPLOI"
+      ],
+      "field_structure_category:name": [
+        "Structure emploi"
+      ],
+      "field_structure_category:tid": 67,
+      "nid": 352,
+      "search_api_language": "fr",
+      "search_api_url": "http:\/\/localhost:8000\/content\/ecedi-grenoble",
+      "status": 1,
+      "title": [
+        "Musée Grévin"
+      ],
+      "type": "structure",
+      "url": "http:\/\/localhost:8000\/content\/ecedi-grenoble"
+    },
+  },
+  {
+    "id": "353",
+    "score": 1,
+    "fields": {
+      "search_api_id": "351",
+      "search_api_relevance": 1,
+      "changed": 1478690407,
+      "created": 1478687029,
+      "field_address:city": [
+        "Paris"
+      ],
+      "field_address:country": [
+        "fr"
+      ],
+      "field_address:country_name": [
+        "France"
+      ],
+      "field_address:latitude": 48.8556,
+      "field_address:longitude": 2.3121,
+      "field_address:name": [
+        "Les Invalides"
+      ],
+      "field_address:postal_code": [
+        "75007"
+      ],
+      "field_address:street": [
+        "129, Rue de Grenelle"
+      ],
+      "field_structure_category:field_code": [
+        "EMPLOI"
+      ],
+      "field_structure_category:name": [
+        "Structure emploi"
+      ],
+      "field_structure_category:tid": 67,
+      "nid": 353,
+      "search_api_language": "fr",
+      "search_api_url": "http:\/\/localhost:8000\/content\/ecedi-grenoble",
+      "status": 1,
+      "title": [
+        "Les Invalides"
+      ],
+      "type": "structure",
+      "url": "http:\/\/localhost:8000\/content\/ecedi-grenoble"
+    },
   }
 ]
 
