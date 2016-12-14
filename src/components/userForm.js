@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { fetchLocation, submitForm } from '../actions/index'
 import { bindActionCreators } from 'redux'
+import Location from 'react-place'
 
 class userForm extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class userForm extends Component {
     this.getLoc = this.getLoc.bind(this)
     this.reset = this.reset.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.onLocationSet = this.onLocationSet.bind(this)
   }
 
   handleSubmit(e) {
@@ -40,6 +43,13 @@ class userForm extends Component {
   displayCity() {
   }
 
+  componentDidMount() {
+  }
+
+  onLocationSet(data) {
+    this.setState({location: [data.coords.lat, data.coords.lng]})
+  }
+
   reset() {
     this.setState({location: []})
   }
@@ -49,8 +59,19 @@ class userForm extends Component {
       <form onSubmit={this.handleSubmit} className="inline">
       <div className="form-group">
         <label htmlFor="firstName">Votre localisation</label>
-        <input name="userLoc" onChange={this.handleChange} value={this.state.location} type="text" className="form-control userloc"/>
-        <button className="btn btn-primary" onClick={this.getLoc}>Localisation</button>
+        <span ref="awesomeplete" className="awesomeplete">
+          <Location
+            country='FR'
+            noMatching='Sorry, I can not find {{value}}.'
+            onLocationSet={ this.onLocationSet }
+            inputProps={{
+              style: {color: '#0099FF'},
+              className:'form-control',
+              placeholder: 'Je saisis ma localisation'
+            }}/>
+        </span>
+        <span> Ou bien j'utilise la </span>
+        <button className="btn btn-primary" onClick={this.getLoc}>Localisation automatique</button>
       </div>
       <div>
         <button type="submit" disabled={this.state.location.length < 2} className="btn btn-default">Envoyer</button>

@@ -30,15 +30,29 @@ class MapView extends Component {
 
     let timer
 
-    document.addEventListener("mousedown", () =>{
-      timer = setInterval(() =>{
+    document.addEventListener("mousedown", () => {
+      timer = setInterval(() => {
         this.props.mapCenter(map.getCenter())
       }, 100)
     })
 
-    document.addEventListener("mouseup", function(){
+    document.addEventListener("mouseup", () =>{
       if (timer) clearInterval(timer)
     })
+
+    map._handlers.forEach(function(handler) {
+      handler.disable()
+    })
+  }
+
+  componentDidUpdate() {
+    const map = this.refs.map.leafletElement
+
+    if (this.props.location) {
+      map._handlers.forEach(function(handler) {
+        handler.enable()
+      })
+    }
   }
 
   render() {
