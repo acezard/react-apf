@@ -31,7 +31,7 @@ class App extends Component {
               <Map locations={this.props.locationsList} submitted={this.props.submitted}/>
             </div>
             <div className="col-md-6">
-              <CategoryList className="list-group" locations={this.props.locationsList}/>
+              <CategoryList className="list-group" locations={this.props.locationsList} activeLoc={this.props.activeLoc}/>
             </div>
           </div>
         </div>
@@ -43,7 +43,8 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     locationsList: ComputedListSelector(state),
-    submitted: state.submitted
+    submitted: state.submitted,
+    activeLoc: state.activeLoc
   }
 }
 

@@ -3,9 +3,10 @@ import React from 'react'
 const categoryList = props => {
   const locations = props.locations.map(location => {
     const fields = location.fields
+    const classNames = location.id === props.activeLoc ? 'active list-group-item' : 'list-group-item'
 
     return (
-      <li className="list-group-item" key={location.id}>
+      <li className={classNames} key={location.id}>
         <h4>{fields.title} <small>{location.distance}km</small></h4>
         <div className="body">
           {fields['field_address:street'] &&

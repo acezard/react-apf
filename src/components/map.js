@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { connect } from 'react-redux'
-import { mapCenter } from '../actions/index'
+import { mapCenter, setActiveLoc } from '../actions/index'
 import { bindActionCreators } from 'redux'
 
 class MapView extends Component {
@@ -10,13 +10,17 @@ class MapView extends Component {
       const coords = [location.fields["field_address:latitude"], location.fields['field_address:longitude']]
 
       return (
-        <Marker position={ coords } key={location.id}>
+        <Marker position={ coords } key={location.id} onClick={() => this.getActiveLoc(location)}>
           <Popup>
             <span>{location.fields["field_address:name"]}</span>
           </Popup>
         </Marker>
       )
     })
+  }
+
+  getActiveLoc = location => {
+    this.props.setActiveLoc(location.id)
   }
 
   componentDidMount() {
@@ -78,7 +82,7 @@ function mapStateToProps({ location }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ mapCenter }, dispatch)
+  return bindActionCreators({ mapCenter, setActiveLoc }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapView)

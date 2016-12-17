@@ -217,7 +217,7 @@ const list = [
       "field_structure_category:name": [
         "Structure emploi"
       ],
-      "field_structure_category:tid": 67,
+      "field_structure_category:tid": 65,
       "nid": 353,
       "search_api_language": "fr",
       "search_api_url": "http:\/\/localhost:8000\/content\/ecedi-grenoble",
@@ -263,7 +263,7 @@ const list = [
       "field_structure_category:name": [
         "Structure emploi"
       ],
-      "field_structure_category:tid": 67,
+      "field_structure_category:tid": 65,
       "nid": 353,
       "search_api_language": "fr",
       "search_api_url": "http:\/\/localhost:8000\/content\/ecedi-grenoble",
