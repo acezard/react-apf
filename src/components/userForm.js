@@ -6,51 +6,37 @@ import { bindActionCreators } from 'redux'
 import Location from 'react-place'
 
 class userForm extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      location: [],
-      categories: []
-    }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.getLoc = this.getLoc.bind(this)
-    this.reset = this.reset.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.onLocationSet = this.onLocationSet.bind(this)
+  state = {
+    location: [],
+    categories: []
   }
 
-  handleSubmit(e) {
-    e.preventDefault()
+  handleSubmit = e => {
+    if (e) e.preventDefault()
 
     this.props.fetchLocation(this.state.location)
     this.props.submitForm(true)
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({location: e.target.value})
   }
 
-  getLoc(e) {
+  getLoc = e => {
     e.preventDefault()
 
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({location: [position.coords.latitude, position.coords.longitude]})
+
+      this.handleSubmit()
     })
   }
 
-  displayCity() {
-  }
-
-  componentDidMount() {
-  }
-
-  onLocationSet(data) {
+  onLocationSet = data => {
     this.setState({location: [data.coords.lat, data.coords.lng]})
   }
 
-  reset() {
+  reset = () => {
     this.setState({location: []})
   }
 

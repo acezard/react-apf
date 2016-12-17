@@ -5,12 +5,6 @@ import { mapCenter } from '../actions/index'
 import { bindActionCreators } from 'redux'
 
 class MapView extends Component {
-  constructor(props) {
-    super(props)
-
-    this.componentDidMount = this.componentDidMount.bind(this)
-  }
-
   printLocations() {
     return this.props.locations.map(location => {
       const coords = [location.fields["field_address:latitude"], location.fields['field_address:longitude']]
@@ -36,7 +30,7 @@ class MapView extends Component {
       }, 100)
     })
 
-    document.addEventListener("mouseup", () =>{
+    document.addEventListener("mouseup", () => {
       if (timer) clearInterval(timer)
     })
 
@@ -64,13 +58,16 @@ class MapView extends Component {
         />
 
         {this.props.location &&
-        <Marker position={ this.props.location }>
-          <Popup>
-            <span>Votre position</span>
-          </Popup>
-        </Marker>}
+          <Marker position={ this.props.location }>
+            <Popup>
+              <span>Votre position</span>
+            </Popup>
+          </Marker>
+        }
 
-        {this.props.submitted ? this.printLocations() : ''}
+        {this.props.submitted &&
+          this.printLocations()
+        }
       </Map>
     )
   }

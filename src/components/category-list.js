@@ -6,7 +6,7 @@ const categoryList = props => {
 
     return (
       <li className="list-group-item" key={location.id}>
-        <h4 className="cat-{{fields.field_structure_category:tid}}">{fields.title}</h4>
+        <h4>{fields.title} <small>{location.distance}km</small></h4>
         <div className="body">
           {fields['field_address:street'] &&
             <span className="address">{fields['field_address:street']}</span>}

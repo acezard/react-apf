@@ -3,12 +3,9 @@ import UserForm from './userForm'
 import Map from './map'
 import CategoryList from './category-list'
 import { connect } from 'react-redux'
+import ComputedListSelector from '../selectors/computed_list'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div className="container">
@@ -43,8 +40,11 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ locationsList, submitted }) {
-  return { locationsList, submitted}
+function mapStateToProps(state) {
+  return {
+    locationsList: ComputedListSelector(state),
+    submitted: state.submitted
+  }
 }
 
 export default connect(mapStateToProps)(App)

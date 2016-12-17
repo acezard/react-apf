@@ -228,6 +228,52 @@ const list = [
       "type": "structure",
       "url": "http:\/\/localhost:8000\/content\/ecedi-grenoble"
     },
+  },
+  {
+    "id": "354",
+    "score": 1,
+    "fields": {
+      "search_api_id": "351",
+      "search_api_relevance": 1,
+      "changed": 1478690407,
+      "created": 1478687029,
+      "field_address:city": [
+        "Paris"
+      ],
+      "field_address:country": [
+        "fr"
+      ],
+      "field_address:country_name": [
+        "France"
+      ],
+      "field_address:latitude": 48.850057799999995,
+      "field_address:longitude": 2.3927177,
+      "field_address:name": [
+        "Paris"
+      ],
+      "field_address:postal_code": [
+        "75007"
+      ],
+      "field_address:street": [
+        "129, Rue de Grenelle"
+      ],
+      "field_structure_category:field_code": [
+        "EMPLOI"
+      ],
+      "field_structure_category:name": [
+        "Structure emploi"
+      ],
+      "field_structure_category:tid": 67,
+      "nid": 353,
+      "search_api_language": "fr",
+      "search_api_url": "http:\/\/localhost:8000\/content\/ecedi-grenoble",
+      "status": 1,
+      "title": [
+        "Paris"
+      ],
+      "type": "structure",
+      "url": "http:\/\/localhost:8000\/content\/ecedi-grenoble"
+    },
   }
 ]
 
