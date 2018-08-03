@@ -31,7 +31,7 @@
     "leaflet": "^1.0.2",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react-dom": "^16.0.1",
     "react-leaflet": "^1.0.1",
     "react-place": "^0.6.1",
     "react-redux": "^4.0.0",
